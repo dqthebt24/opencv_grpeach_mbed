@@ -19,3 +19,21 @@ The demo include face detection, face recognition, hand gesture detection, motio
 - On hand gesture detection, click **Sampling** to create sample, then click **Stop** to start demo. You need a black background for good demo. 
 
 - On face recognition click **Add person** then choose ID for face.
+
+**Note:** 
+Change heapsize in file 
+
+*mbed-os/targets/TARGET_RENESAS/TARGET_RZ_A1H/device/TOOLCHAIN_GCC_ARM/startup_RZ1AH.S*
+ 
+at line 99 or in file 
+
+*mbed-os/targets/TARGET_RENESAS/TARGET_RZ_A1H/device/TOOLCHAIN_GCC_STD/startup_RZ1AH.S* at line 90 to
+
+```
+.EQU    Heap_Size       , 0x00300000
+```
+
+to use opencv.
+
+
+ 
